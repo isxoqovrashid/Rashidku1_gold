@@ -86,24 +86,37 @@ const url='https://t.me/IsxoqovR?text='+message;
 window.open(url,'_blank');
 });
 </script>
-</body><script>
-document.querySelector('form')?.addEventListener('submit', function(e) {
-  e.preventDefault();
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
 
-  const fields = [...this.querySelectorAll('input, select, textarea')];
-  let message = "🟡 RASHIDKU1 GOLD — BUYURTMA\n\n";
+  if (!form) {
+    console.log("Buyurtma formasi topilmadi");
+    return;
+  }
 
-  fields.forEach(field => {
-    if (field.value.trim()) {
-      message += field.value + "\n";
-    }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const fields = form.querySelectorAll("input, select, textarea");
+    let message = "🟡 RASHIDKU1 GOLD — YANGI BUYURTMA\n\n";
+
+    fields.forEach(function (field) {
+      if (field.value.trim()) {
+        message += field.value.trim() + "\n";
+      }
+    });
+
+    message += "\nTelegram: @IsxoqovR";
+
+    const telegramUrl =
+      "https://t.me/share/url?url=" +
+      encodeURIComponent("https://t.me/IsxoqovR") +
+      "&text=" + encodeURIComponent(message);
+
+    window.location.href = telegramUrl;
   });
-
-  const url = "https://t.me/share/url?url=" +
-    encodeURIComponent("https://t.me/IsxoqovR") +
-    "&text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
 });
 </script>
+</body>
 </html>
