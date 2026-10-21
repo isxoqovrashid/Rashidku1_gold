@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rashidku1 Gold</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:white;font-family:Arial,sans-serif}
+header{text-align:center;padding:25px 12px;background:#151515;border-bottom:1px solid #d6a928}
+.logo{font-size:29px;font-weight:bold;color:#ffce45}
+.logo span{color:white}
+header p{color:#aaa;font-size:13px}
+main{max-width:700px;margin:auto;padding:20px}
+.hero{text-align:center;padding:28px 10px}
+.hero h1{font-size:30px;color:#ffce45}
+.hero p{color:#bbb;line-height:1.6}
+.notice{background:#211b0c;border:1px solid #80651c;padding:14px;border-radius:12px;color:#f8d978;font-size:13px;line-height:1.5}
+h2{color:#ffce45;margin-top:28px}
+.card{background:#171717;border:1px solid #383027;padding:18px;margin:14px 0;border-radius:15px}
+.card h3{margin:0 0 8px}
+.price{color:#ffce45;font-size:23px;font-weight:bold;margin:12px 0}
+button{background:#ffce45;color:#111;border:0;border-radius:9px;padding:13px;font-size:16px;font-weight:bold;width:100%;cursor:pointer}
+label{display:block;margin:14px 0 7px;color:#ddd}
+input,select,textarea{width:100%;padding:13px;background:#242424;color:white;border:1px solid #555;border-radius:8px;font-size:16px}
+footer{text-align:center;padding:25px;color:#999;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">RASHIDKU1 <span>GOLD</span> 🪙</div>
+<p>STANDOFF 2 • GOLD SHOP</p>
+</header>
+<main>
+<section class="hero">
+<h1>GOLD MARKET</h1>
+<p>Standoff 2 uchun Gold buyurtmangizni qulay tarzda qoldiring.</p>
+</section>
+
+<div class="notice">
+⚠️ Gold paketlari va narxlari sotuvchi tomonidan tasdiqlanadi.
+Buyurtma berish Gold avtomatik yetkazilishini anglatmaydi.
+</div>
+
+<h2>🪙 Gold do‘koni</h2>
+<div class="card">
+<h3>Gold paketi</h3>
+<p>Kerakli Gold miqdorini o'zingiz tanlang.</p>
+<form id="orderForm">
+<label>Gold miqdori</label>
+<select id="gold" required>
+<option value="">Tanlang</option>
+<option>100 Gold</option>
+<option>500 Gold</option>
+<option>1000 Gold</option>
+<option>Boshqa miqdor</option>
+</select>
+
+<label>Narxi (so'm)</label>
+<input id="price" type="number" min="0" placeholder="Narxni kelishib oling" required>
+
+<label>O'yin ID raqamingiz</label>
+<input id="gameid" type="text" placeholder="O'yin ID" required>
+
+<label>Izoh (ixtiyoriy)</label>
+<textarea id="note" rows="3" placeholder="Qo'shimcha ma'lumot"></textarea>
+
+<br><br>
+<button type="submit">✈️ Telegram orqali buyurtma</button>
+</form>
+</div>
+
+<footer>© 2026 Rashidku1 Gold • Buyurtmalar sotuvchi tasdig'idan so'ng ko'rib chiqiladi.</footer>
+</main>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit',function(e){
+e.preventDefault();
+const gold=document.getElementById('gold').value;
+const price=document.getElementById('price').value;
+const gameid=document.getElementById('gameid').value.trim();
+const note=document.getElementById('note').value.trim();
+
+const message=`Salom! Rashidku1 Gold saytidan buyurtma.%0AGold: ${encodeURIComponent(gold)}%0ANarx: ${encodeURIComponent(price)} so'm%0'O'yin ID: ${encodeURIComponent(gameid)}%0AIzoh: ${encodeURIComponent(note)}`;
+const url='https://t.me/IsxoqovR?text='+message;
+window.open(url,'_blank');
+});
+</script>
+</body>
+</html>
